@@ -1,7 +1,7 @@
 # 🔧 Quick Configuration for Your Deployed Applications
 
 ## 🎯 Your Deployment URLs
-- **Backend API:** https://peer-dusky.vercel.app
+- **Backend API:** https://peer-beta.vercel.app
 - **Frontend App:** https://peer-x5pa.vercel.app
 
 ## ⚡ Immediate Actions Required
@@ -24,7 +24,7 @@ Go to your **frontend project** (peer-x5pa) in Vercel dashboard:
 1. **Settings** → **Environment Variables**
 2. **Add/Update `VITE_API_URL`:**
 ```env
-VITE_API_URL = https://peer-dusky.vercel.app/api
+VITE_API_URL = https://peer-beta.vercel.app/api
 ```
 3. **Save and Redeploy**
 
@@ -38,9 +38,9 @@ VITE_API_URL = https://peer-dusky.vercel.app/api
 ## 🧪 Test Your Deployment
 
 ### Backend Tests:
-- Health: https://peer-dusky.vercel.app/api/health
-- Projects: https://peer-dusky.vercel.app/api/projects
-- Users: https://peer-dusky.vercel.app/api/users
+- Health: https://peer-beta.vercel.app/api/health
+- Projects: https://peer-beta.vercel.app/api/projects
+- Users: https://peer-beta.vercel.app/api/users
 
 ### Frontend Test:
 - Visit: https://peer-x5pa.vercel.app
@@ -59,7 +59,7 @@ CLIENT_URL = https://peer-x5pa.vercel.app
 
 ### Frontend (peer-x5pa):
 ```env
-VITE_API_URL = https://peer-dusky.vercel.app/api
+VITE_API_URL = https://peer-beta.vercel.app/api
 VITE_FIREBASE_API_KEY = AIzaSyDc_SYKlyMLHtidREPm1gP7mBxBBefw16I
 VITE_FIREBASE_AUTH_DOMAIN = peer-b5111.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID = peer-b5111
