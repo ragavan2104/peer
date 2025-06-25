@@ -87,26 +87,25 @@ In the Vercel dashboard for your frontend project:
 
 ```env
 VITE_API_URL
-Value: https://your-backend-name.vercel.app/api
-(Replace with your actual backend URL from Step 2.3)
+Value: https://peer-tif.vercel.app/api
 
 VITE_FIREBASE_API_KEY
-Value: your-firebase-api-key
+Value: AIzaSyDc_SYKlyMLHtidREPm1gP7mBxBBefw16I
 
 VITE_FIREBASE_AUTH_DOMAIN
-Value: your-project.firebaseapp.com
+Value: peer-b5111.firebaseapp.com
 
 VITE_FIREBASE_PROJECT_ID
-Value: your-project-id
+Value: peer-b5111
 
 VITE_FIREBASE_STORAGE_BUCKET
-Value: your-project.appspot.com
+Value: peer-b5111.firebasestorage.app
 
 VITE_FIREBASE_MESSAGING_SENDER_ID
-Value: 123456789
+Value: 147085389719
 
 VITE_FIREBASE_APP_ID
-Value: your-app-id
+Value: 1:147085389719:web:4c659f1c5364670df41ed2
 ```
 
 ### 3.3 Deploy Frontend
@@ -124,8 +123,7 @@ Value: your-app-id
 3. Update the `CLIENT_URL` variable:
 ```env
 CLIENT_URL
-Value: https://your-frontend-name.vercel.app
-(Replace with your actual frontend URL from Step 3.3)
+Value: https://peer-pvvu.vercel.app
 ```
 
 ### 4.2 Redeploy Backend
