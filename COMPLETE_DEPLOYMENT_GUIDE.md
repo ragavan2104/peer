@@ -97,7 +97,7 @@ Your frontend is configured with:
 5. **Add Environment Variables:**
 ```env
 VITE_API_URL
-https://your-backend-url.vercel.app/api
+https://peer-dusky.vercel.app/api
 
 VITE_FIREBASE_API_KEY
 AIzaSyDc_SYKlyMLHtidREPm1gP7mBxBBefw16I
@@ -132,7 +132,7 @@ VITE_FIREBASE_APP_ID
 3. **Edit the `CLIENT_URL` variable:**
 ```env
 CLIENT_URL
-https://your-frontend-url.vercel.app
+https://peer-x5pa.vercel.app
 ```
 4. **Go to Deployments tab**
 5. **Click "..." on latest deployment → "Redeploy"**
@@ -191,9 +191,9 @@ Visit your frontend and test all features:
 ### Step 6.2: API Endpoint Tests
 
 Test these backend URLs directly:
-- `https://your-backend.vercel.app/api/health` → Returns OK status
-- `https://your-backend.vercel.app/api/projects` → Returns projects array
-- `https://your-backend.vercel.app/api/users` → Returns users array
+- `https://peer-dusky.vercel.app/api/health` → Returns OK status
+- `https://peer-dusky.vercel.app/api/projects` → Returns projects array
+- `https://peer-dusky.vercel.app/api/users` → Returns users array
 
 ---
 
@@ -202,10 +202,10 @@ Test these backend URLs directly:
 After successful deployment, you'll have:
 
 **🎨 Frontend (Main App):**
-`https://your-frontend-name.vercel.app`
+`https://peer-x5pa.vercel.app`
 
 **🔧 Backend (API):**
-`https://your-backend-name.vercel.app`
+`https://peer-dusky.vercel.app`
 
 **🗄️ Database:**
 MongoDB Atlas (automatically connected)
