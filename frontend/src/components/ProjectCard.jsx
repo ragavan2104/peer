@@ -40,7 +40,7 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
     <div className={clsx('card p-6 hover:shadow-lg transition-shadow duration-200', className)}>
       {/* Project Image */}
       {imageUrl && (
-        <Link to={`/projects/${_id}`} className="block mb-4">
+        <Link to={`/project/${_id}`} className="block mb-4">
           <img
             src={imageUrl}
             alt={title}
@@ -53,7 +53,7 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
       )}
 
       {/* Project Header */}
-      <Link to={`/projects/${_id}`} className="block mb-3">
+      <Link to={`/project/${_id}`} className="block mb-3">
         <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-primary-600 transition-colors">
           {title}
         </h3>

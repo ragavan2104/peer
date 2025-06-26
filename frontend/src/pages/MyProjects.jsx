@@ -165,7 +165,7 @@ const MyProjects = () => {
                     )}
                     <div className="flex-1">
                       <Link
-                        to={`/projects/${project._id}`}
+                        to={`/project/${project._id}`}
                         className="text-xl font-semibold text-gray-900 hover:text-primary-600 transition-colors"
                       >
                         {project.title}
@@ -207,13 +207,13 @@ const MyProjects = () => {
                 {/* Actions */}
                 <div className="flex items-center space-x-3 mt-4 lg:mt-0">
                   <Link
-                    to={`/projects/${project._id}`}
+                    to={`/project/${project._id}`}
                     className="text-primary-600 hover:text-primary-700 font-medium text-sm"
                   >
                     View
                   </Link>
                   <Link
-                    to={`/projects/${project._id}/edit`}
+                    to={`/project/${project._id}/edit`}
                     className="flex items-center text-gray-600 hover:text-gray-700 text-sm"
                   >
                     <PencilIcon className="h-4 w-4 mr-1" />

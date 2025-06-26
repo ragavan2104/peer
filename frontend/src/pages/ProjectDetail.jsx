@@ -194,7 +194,7 @@ const ProjectDetail = () => {
             {isOwner && (
               <div className="flex gap-2">
                 <Link
-                  to={`/projects/${id}/edit`}
+                  to={`/project/${id}/edit`}
                   className="btn-secondary flex items-center justify-center"
                 >
                   <PencilIcon className="h-4 w-4 mr-2" />

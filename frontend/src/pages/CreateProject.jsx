@@ -121,7 +121,7 @@ const CreateProject = () => {
 
       const response = await api.post('/projects', projectData);
       toast.success('Project created successfully!');
-      navigate(`/projects/${response.data._id}`);
+      navigate(`/project/${response.data._id}`);
     } catch (error) {
       console.error('Create project error:', error);
       const errorMessage = error.response?.data?.message || 'Failed to create project';
