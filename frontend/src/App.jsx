@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import CreateProject from './pages/CreateProject';
+import EditProject from './pages/EditProject';
 import ProjectDetail from './pages/ProjectDetail';
 import Explore from './pages/Explore';
 import MyProjects from './pages/MyProjects';
@@ -56,6 +57,15 @@ const AppRoutes = () => {
         <Layout>
           <ProjectDetail />
         </Layout>
+      } />
+      
+      {/* Edit Project Route */}
+      <Route path="/project/:id/edit" element={
+        <ProtectedRoute>
+          <Layout>
+            <EditProject />
+          </Layout>
+        </ProtectedRoute>
       } />
       
       {/* User Profile Route */}
