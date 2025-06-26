@@ -1,11 +1,15 @@
 <div align="center">
+
+# 🌐 [**LIVE DEMO - Try It Now!**](https://peer-kimv.vercel.app/explore) 🚀
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-4F46E5?style=for-the-badge&labelColor=000000)](https://peer-kimv.vercel.app/explore)
+[![GitHub](https://img.shields.io/badge/📂_GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/ragavan2104/peer)
+
+---
   
 # 🚀 Peer Project Hub
 
 **A modern platform for developers to showcase, discover, and collaborate on coding projects**
-
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_App-4F46E5?style=for-the-badge)](https://peer-kimv.vercel.app/explore)
-[![GitHub](https://img.shields.io/badge/📂_GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/ragavan2104/peer)
 
 ---
 
