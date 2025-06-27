@@ -36,16 +36,6 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
       onLike(_id);
     }
   };
-
-  // Helper function to ensure URL has protocol
-  const ensureHttpProtocol = (url) => {
-    if (!url) return url;
-    if (url.startsWith('http://') || url.startsWith('https://')) {
-      return url;
-    }
-    return `https://${url}`;
-  };
-  
   return (
     <div className={clsx('card p-6 hover:shadow-lg transition-shadow duration-200', className)}>
       {/* Project Image */}
@@ -123,7 +113,7 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
       <div className="flex items-center space-x-4 mb-4">
         {githubUrl && (
           <a
-            href={ensureHttpProtocol(githubUrl)}
+            href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-gray-900 flex items-center"
@@ -134,7 +124,7 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
         )}
         {liveUrl && (
           <a
-            href={ensureHttpProtocol(liveUrl)}
+            href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-gray-900 flex items-center"
