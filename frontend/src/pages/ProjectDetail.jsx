@@ -83,26 +83,6 @@ const ProjectDetail = () => {
 
   const isOwner = user && project && project.author._id === user.id;
 
-  // Debug logging
-  if (project) {
-    console.log('Project loaded:', {
-      id: project._id,
-      title: project.title,
-      githubUrl: project.githubUrl,
-      liveUrl: project.liveUrl,
-      author: project.author
-    });
-  }
-
-  // Helper function to ensure URL has protocol
-  const ensureHttpProtocol = (url) => {
-    if (!url) return url;
-    if (url.startsWith('http://') || url.startsWith('https://')) {
-      return url;
-    }
-    return `https://${url}`;
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -189,15 +169,10 @@ const ProjectDetail = () => {
           <div className="flex flex-col sm:flex-row gap-3 mt-4 lg:mt-0">
             {project.githubUrl && (
               <a
-                href={ensureHttpProtocol(project.githubUrl)}
+                href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center justify-center"
-                onClick={(e) => {
-                  console.log('GitHub URL clicked:', project.githubUrl);
-                  console.log('Final URL:', ensureHttpProtocol(project.githubUrl));
-                  // Let the default behavior happen
-                }}
               >
                 <CodeBracketIcon className="h-4 w-4 mr-2" />
                 View Code
@@ -206,15 +181,10 @@ const ProjectDetail = () => {
             
             {project.liveUrl && (
               <a
-                href={ensureHttpProtocol(project.liveUrl)}
+                href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary flex items-center justify-center"
-                onClick={(e) => {
-                  console.log('Live URL clicked:', project.liveUrl);
-                  console.log('Final URL:', ensureHttpProtocol(project.liveUrl));
-                  // Let the default behavior happen
-                }}
               >
                 <GlobeAltIcon className="h-4 w-4 mr-2" />
                 Live Demo

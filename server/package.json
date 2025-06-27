@@ -1,31 +1,55 @@
 {
   "name": "peer-project-hub-server",
   "version": "1.0.0",
-  "description": "Backend API for Peer Project Hub",
+  "description": "Backend API server for Peer Project Hub - A platform for developers to share and discover coding projects",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "echo 'No build step required'",
-    "vercel-build": "echo 'Building for Vercel'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'No build step required for Node.js server'",
+    "test": "echo 'No tests specified yet'",
+    "lint": "echo 'No linting configured yet'"
   },
-  "keywords": ["nodejs", "express", "mongodb", "api"],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "api",
+    "backend",
+    "projects",
+    "developer-platform",
+    "firebase-auth"
+  ],
+  "author": "Ragavan",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.19.2",
-    "mongoose": "^8.6.1",
+    "mongoose": "^8.0.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2",
-    "express-validator": "^7.2.0",
     "helmet": "^7.1.0",
-    "express-rate-limit": "^7.4.0"
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "firebase-admin": "^12.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "morgan": "^1.10.0",
+    "compression": "^1.7.4"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
-  }
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ragavan2104/peer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ragavan2104/peer/issues"
+  },
+  "homepage": "https://peer-kimv.vercel.app"
 }
