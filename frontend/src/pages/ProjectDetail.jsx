@@ -151,12 +151,7 @@ const ProjectDetail = () => {
                 <span className="text-sm">{project.totalLikes} likes</span>
               </button>
 
-              <div className="flex items-center space-x-2">
-                <StarIcon className="h-5 w-5 text-yellow-400" />
-                <span className="text-sm text-gray-600">
-                  {project.averageRating > 0 ? `${project.averageRating} (${project.ratings?.length || 0} ratings)` : 'No ratings yet'}
-                </span>
-              </div>
+             
 
               <div className="flex items-center space-x-2">
                 <ChatBubbleLeftIcon className="h-5 w-5 text-gray-400" />
