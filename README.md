@@ -351,14 +351,11 @@ If you found this project helpful, please consider:
 ### 📞 Support & Contact
 
 💬 **Questions?** Create an issue on GitHub  
-📧 **Email:** your-email@example.com  
+📧 **Email:** ragavan212005@gmail.com  
 🌐 **Live Demo:** [https://peer-kimv.vercel.app](https://peer-kimv.vercel.app/explore)
 
 ---
 
-### 📜 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
