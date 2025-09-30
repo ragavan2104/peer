@@ -54,10 +54,10 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
 
       {/* Project Header */}
       <Link to={`/project/${_id}`} className="block mb-3">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-primary-600 transition-colors">
+        <h3 className="text-lg font-semibold text-primary mb-2 line-clamp-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200">
           {title}
         </h3>
-        <p className="text-gray-600 text-sm line-clamp-3">
+        <p className="text-secondary text-sm line-clamp-3">
           {truncateText(description, 120)}
         </p>
       </Link>
@@ -69,13 +69,13 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
             {tags.slice(0, 3).map((tag, index) => (
               <span
                 key={index}
-                className="inline-block bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full"
+                className="inline-block bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 text-xs px-2 py-1 rounded-full"
               >
                 {tag}
               </span>
             ))}
             {tags.length > 3 && (
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-secondary">
                 +{tags.length - 3} more
               </span>
             )}
@@ -93,15 +93,15 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
               className="h-8 w-8 rounded-full mr-3"
             />
           ) : (
-            <div className="h-8 w-8 rounded-full bg-primary-500 flex items-center justify-center text-white text-sm font-medium mr-3">
+            <div className="h-8 w-8 rounded-full bg-primary-500 dark:bg-primary-600 flex items-center justify-center text-white text-sm font-medium mr-3">
               {author.displayName?.charAt(0)?.toUpperCase()}
             </div>
           )}
           <div>
-            <p className="text-sm font-medium text-gray-900">
+            <p className="text-sm font-medium text-primary">
               {author.displayName}
             </p>
-            <p className="text-xs text-gray-500 flex items-center">
+            <p className="text-xs text-secondary flex items-center">
               <CalendarIcon className="h-3 w-3 mr-1" />
               {formatTimeAgo(createdAt)}
             </p>
@@ -116,7 +116,7 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 flex items-center"
+            className="text-secondary hover:text-primary flex items-center transition-colors duration-200"
           >
             <CodeBracketIcon className="h-4 w-4 mr-1" />
             <span className="text-sm">Code</span>
@@ -127,7 +127,7 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 flex items-center"
+            className="text-secondary hover:text-primary flex items-center transition-colors duration-200"
           >
             <GlobeAltIcon className="h-4 w-4 mr-1" />
             <span className="text-sm">Live Demo</span>
@@ -136,12 +136,12 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
       </div>
 
       {/* Project Stats */}
-      <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+      <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
         <div className="flex items-center space-x-4">
           {/* Like Button */}
           <button
             onClick={handleLike}
-            className="flex items-center space-x-1 text-gray-600 hover:text-red-500 transition-colors"
+            className="flex items-center space-x-1 text-secondary hover:text-red-500 transition-colors duration-200"
           >
             {isLiked ? (
               <HeartSolidIcon className="h-4 w-4 text-red-500" />
@@ -153,14 +153,14 @@ const ProjectCard = ({ project, onLike, showAuthor = true, className = '' }) => 
 
           {/* Rating */}
           {averageRating > 0 && (
-            <div className="flex items-center space-x-1 text-gray-600">
+            <div className="flex items-center space-x-1 text-secondary">
               <StarIcon className="h-4 w-4 text-yellow-400" />
               <span className="text-sm">{averageRating}</span>
             </div>
           )}
 
           {/* Views */}
-          <div className="flex items-center space-x-1 text-gray-600">
+          <div className="flex items-center space-x-1 text-secondary">
             <EyeIcon className="h-4 w-4" />
             <span className="text-sm">{views || 0}</span>
           </div>

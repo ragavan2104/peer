@@ -10,6 +10,7 @@ import {
   MagnifyingGlassIcon
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../contexts/AuthContext';
+import DarkModeToggle from './DarkModeToggle';
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -34,13 +35,13 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen page-bg">
       {/* Mobile sidebar */}
       <div className={`fixed inset-0 flex z-40 md:hidden ${sidebarOpen ? '' : 'pointer-events-none'}`}>
-        <div className={`fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity ${sidebarOpen ? 'opacity-100' : 'opacity-0'}`} 
+        <div className={`fixed inset-0 bg-gray-600 dark:bg-gray-900 bg-opacity-75 dark:bg-opacity-75 transition-opacity ${sidebarOpen ? 'opacity-100' : 'opacity-0'}`} 
              onClick={() => setSidebarOpen(false)} />
         
-        <div className={`relative flex-1 flex flex-col max-w-xs w-full bg-white transform transition ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className={`relative flex-1 flex flex-col max-w-xs w-full sidebar-bg transform transition ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="absolute top-0 right-0 -mr-12 pt-2">
             <button
               type="button"
@@ -54,17 +55,17 @@ const Layout = ({ children }) => {
           <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
             <div className="flex-shrink-0 flex items-center px-4">
               <img src="/logo.svg" alt="Peer Project Hub" className="h-8 w-8 mr-3" />
-              <h1 className="text-xl font-bold text-primary-600">Peer Project Hub</h1>
+              <h1 className="text-xl font-bold text-primary-600 dark:text-primary-400">Peer Project Hub</h1>
             </div>
             <nav className="mt-5 px-2 space-y-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`group flex items-center px-2 py-2 text-base font-medium rounded-md ${
+                  className={`group flex items-center px-2 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'bg-primary-100 text-primary-900'
-                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      ? 'nav-item-active'
+                      : 'nav-item'
                   }`}
                   onClick={() => setSidebarOpen(false)}
                 >
@@ -73,27 +74,35 @@ const Layout = ({ children }) => {
                 </Link>
               ))}
             </nav>
+            
+            {/* Dark mode toggle for mobile */}
+            <div className="mt-auto px-4 pb-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-secondary">Theme</span>
+                <DarkModeToggle />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Desktop sidebar */}
       <div className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
-        <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white">
+        <div className="flex-1 flex flex-col min-h-0 border-r sidebar-bg">
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div className="flex items-center flex-shrink-0 px-4">
               <img src="/logo.svg" alt="Peer Project Hub" className="h-8 w-8 mr-3" />
-              <h1 className="text-xl font-bold text-primary-600">Peer Project Hub</h1>
+              <h1 className="text-xl font-bold text-primary-600 dark:text-primary-400">Peer Project Hub</h1>
             </div>
             <nav className="mt-5 flex-1 px-2 space-y-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                  className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'bg-primary-100 text-primary-900'
-                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      ? 'nav-item-active'
+                      : 'nav-item'
                   }`}
                 >
                   <item.icon className="mr-3 h-5 w-5" />
@@ -102,19 +111,27 @@ const Layout = ({ children }) => {
               ))}
             </nav>
           </div>
+          
+          {/* Dark mode toggle for desktop */}
+          <div className="px-4 pb-4">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-secondary">Theme</span>
+              <DarkModeToggle />
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Main content */}
       <div className="md:pl-64 flex flex-col flex-1">
         {/* Top navigation */}
-        <div className="sticky top-0 z-10 bg-white shadow-sm border-b border-gray-200">
+        <div className="sticky top-0 z-10 header-bg">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center">
                 <button
                   type="button"
-                  className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 md:hidden"
+                  className="px-4 border-r border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 md:hidden"
                   onClick={() => setSidebarOpen(true)}
                 >
                   <Bars3Icon className="h-6 w-6" />
@@ -122,6 +139,10 @@ const Layout = ({ children }) => {
               </div>
 
               <div className="flex items-center space-x-4">
+                {/* Dark mode toggle for header (mobile only) */}
+                <div className="md:hidden">
+                  <DarkModeToggle />
+                </div>
                 {isAuthenticated ? (
                   <>
                     <Link
@@ -135,7 +156,7 @@ const Layout = ({ children }) => {
                     <div className="relative">
                       <button
                         type="button"
-                        className="flex items-center space-x-2 text-sm text-gray-700 hover:text-gray-900"
+                        className="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
                         onClick={handleLogout}
                       >
                         {user?.photoURL ? (
@@ -145,7 +166,7 @@ const Layout = ({ children }) => {
                             className="h-8 w-8 rounded-full"
                           />
                         ) : (
-                          <div className="h-8 w-8 rounded-full bg-primary-500 flex items-center justify-center text-white text-sm font-medium">
+                          <div className="h-8 w-8 rounded-full bg-primary-500 dark:bg-primary-600 flex items-center justify-center text-white text-sm font-medium">
                             {user?.displayName?.charAt(0)?.toUpperCase()}
                           </div>
                         )}
@@ -157,7 +178,7 @@ const Layout = ({ children }) => {
                   <div className="flex items-center space-x-2">
                     <Link
                       to="/login"
-                      className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 px-3 py-2 text-sm font-medium transition-colors duration-200"
                     >
                       Sign in
                     </Link>
